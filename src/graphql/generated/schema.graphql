@@ -1,0 +1,37 @@
+type Query {
+  products: [Product]
+}
+
+"""Product"""
+type Product {
+  """The id of the product"""
+  id: ID!
+
+  """The name of the product"""
+  nom: String
+
+  """The commercial name of the product"""
+  nomCommercial: String
+
+  """The effective date of the product"""
+  dateEffet: String
+}
+
+type Mutation {
+  createProduct(
+    """CreateProductInput"""
+    input: CreateProductInput!
+  ): Product
+}
+
+"""CreateProductInput"""
+input CreateProductInput {
+  """The name of the product"""
+  nom: String!
+
+  """The commercial name of the product"""
+  nomCommercial: String!
+
+  """The effective date of the product"""
+  dateEffet: String!
+}
